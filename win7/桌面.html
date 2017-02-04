@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title></title>
+<link href="css/index.css" rel="stylesheet"/>
+</head>
+<body>
+	<canvas id="canvas"></canvas>
+	<div id="wrap">
+	</div>
+	<div id="music">
+		<div class='top'>
+			<p>音乐播放器</p>
+			<p>
+				<input type="text" placeholder="请输入要搜索的歌曲..." class="searchInput">
+				<a href="#"></a>
+			</p>
+			<a href="#" class="close">×</a>
+		</div>
+		<div class="center">
+			<div class="left">
+				<div class="song_list">默认列表</div>
+				<ul class="lists">
+					<li>
+						<a href='#'>薛之谦 - 来日方长</a>
+					</li>
+					<li>
+						<a href='#'>薛之谦 - 演员</a>
+					</li>
+					<li>
+						<a href='#'>薛之谦 - 一半</a>
+					</li>
+				</ul>
+			</div>
+			<div class="right">
+				<canvas id="canvasVoice" width="640" height="360"></canvas>
+			</div>
+		</div>
+		<div class="bottom">
+			<div class="play">
+				<p class="prev">
+					<a href="#"></a>
+				</p>
+				<a href="#" class="run"></a>
+				<p class="next">
+					<a href="#"></a>
+				</p>
+			</div>
+			<div class="voice">
+				<a href="#" class="muted"></a>
+				<p class="voiceBar">
+					<a href="#" class="mutedB"></a>
+					<span class="mutedW"></span>
+				</p>
+			</div>
+			<div class="timer">
+				<span class="nowTime">00:00</span><span class="totalTime">/00:00</span>
+				<p class="timerBar">
+					<a href="#" class="dotBtn"></a>
+					<span class="curnow"></span>
+				</p>
+			</div>
+		</div>
+		<audio id="audio" preload="auto"></audio>
+	</div>
+	<!--<div id="bottom">
+		<div></div>
+		<div></div>
+		<div></div>
+	</div>-->
+	<!--贪吃蛇-->
+	<div id="snake">
+		<div class="info">贪吃蛇</div>
+		<div id="map"></div>
+		<div class="help">
+			<div class="left">
+				<div><span></span>蓝瘦</div>
+				<div><span></span>香菇</div>
+				<div id="start"><span></span>神器</div>
+				<div id="close"><span></span>刹车</div>
+			</div>
+			<div class="right">
+				<span>战绩:<strong id="score"> 0 </strong>分</span>
+			</div>
+		</div>
+	</div>
+	
+	<ul id="menu">
+	</ul>
+	<script src="Mtween/MTween.js"></script	>
+	<script src="js/jquery-3.1.1.js"></script>
+	<script src="js/background.js"></script>
+	<script src="js/rightList.js"></script>
+	<script src="js/create.js"></script>
+	<script src="js/music.js"></script>
+	<script src="js/snake.js"></script>
+</body>
+</html>
