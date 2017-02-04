@@ -1,0 +1,1603 @@
+@charset "utf-8";
+/* CSS Document */
+body,html{
+	margin: 0;
+	width: 100%;
+	height: 100%;
+	background: #1a1a1d;
+}
+
+#load {
+	width: 100px;
+	height: 100px;
+	position: absolute;
+	left: 50%;
+	top: 50%;
+	transform: translate(-50%,-50%);  /*位移*/
+}
+
+.wrap {
+    width: 55%;
+    height: 80%;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%,-50%);
+}
+
+.wrap img {
+	border: none;
+	vertical-align: top;
+	display: block;
+	position: absolute;
+	left: 31.5%;
+	top: 13.6%;
+	width: 14.1%;
+	height: 19.7%;
+	display: none;
+}
+
+.wrap .shard-wrap {
+    position: absolute;
+    left: 0;
+    top: 0;
+    z-index: 2;
+    width: 100%;
+    height: 100%;
+}
+.wrap .zIndex {
+	z-index: 999;
+}
+
+.wrap .shard {
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+
+.wrap .shard:before {
+    content: '';        /*必须要有content属性*/
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(255, 255, 255, 0);
+}
+a {
+	font: 12px/50px "微软雅黑";
+	text-align: center;
+	color: #fff;
+	border: 1px solid #fff;
+	cursor: pointer;   /*定义显示的光标类型，此处为手*/
+}
+.prev {
+	position: absolute;
+	left: 85%;
+	top: 30%;
+	width: 50px;
+	height: 50px;
+	border-radius: 50%;
+	opacity: 0;
+}
+.next {
+	position: absolute;
+	left: 85%;
+	top: 60%;
+	width: 50px;
+	height: 50px;
+	border-radius: 50%;
+	opacity: 0;
+}
+.self {
+	position: absolute;
+	left: 15%;
+	top: 60%;
+	width: 50px;
+	height: 50px;
+	border-radius: 50%;
+	opacity: 0;
+}
+.btn {
+	position: absolute;
+	left: 15%;
+	top: 30%;
+	width: 50px;
+	height: 50px;
+	border-radius: 50%;
+	opacity: 0;	
+}
+.shadow {
+	width: 55%;
+    height: 80%;
+    position: absolute;
+    left: 48%;
+    top: 55%;
+    transform: translate(-50%,-50%);
+}
+.shadow p:nth-of-type(1) {
+	 transition: all 1.24s 0.35s cubic-bezier(0.62, 0.02, 0.34, 1);
+}
+.shadow p:nth-of-type(2) {
+	 transition: all 1.24s 0.35s cubic-bezier(0.62, 0.02, 0.34, 1);
+}
+.shadow p:nth-of-type(3) {
+	 transition: all 1.24s 0.35s cubic-bezier(0.62, 0.02, 0.34, 1);
+}
+/*绑定的关键帧名字 完成动画时间 延时时间 播放次数*/
+#load .shard-wrap:nth-child(1) .shard:before {
+    animation: load 1.45s 0s infinite;
+}
+
+#load .shard-wrap:nth-child(2) .shard:before {
+    animation: load 1.45s 0.05s infinite;
+}
+
+#load .shard-wrap:nth-child(3) .shard:before {
+    animation: load 1.45s 0.10s infinite;
+}
+
+#load .shard-wrap:nth-child(4) .shard:before {
+    animation: load 1.45s 0.15s infinite;
+}
+
+#load .shard-wrap:nth-child(5) .shard:before {
+    animation: load 1.45s 0.2s infinite;
+}
+
+#load .shard-wrap:nth-child(6) .shard:before {
+    animation: load 1.45s 0.25s infinite;
+}
+
+#load .shard-wrap:nth-child(7) .shard:before {
+    animation: load 1.45s 0.3s infinite;
+}
+
+#load .shard-wrap:nth-child(8) .shard:before {
+    animation: load 1.45s 0.35s infinite;
+}
+
+#load .shard-wrap:nth-child(9) .shard:before {
+    animation: load 1.45s 0.40s infinite;
+}
+
+#load .shard-wrap:nth-child(10) .shard:before {
+    animation: load 1.45s 0.45s infinite;
+}
+
+#load .shard-wrap:nth-child(11) .shard:before {
+    animation: load 1.45s 0.5s infinite;
+}
+
+#load .shard-wrap:nth-child(12) .shard:before {
+    animation: load 1.45s 0.55s infinite;
+}
+
+#load .shard-wrap:nth-child(13) .shard:before {
+    animation: load 1.45s 0.6s infinite;
+}
+
+#load .shard-wrap:nth-child(14) .shard:before {
+    animation: load 1.45s 0.65s infinite;
+}
+
+#load .shard-wrap:nth-child(15) .shard:before {
+    animation: load 1.45s 0.70s infinite;
+}
+
+#load .shard-wrap:nth-child(16) .shard:before {
+    animation: load 1.45s 0.75s infinite;
+}
+
+#load .shard-wrap:nth-child(17) .shard:before {
+    animation: load 1.45s 0.8s infinite;
+}
+
+#load .shard-wrap:nth-child(18) .shard:before {
+    animation: load 1.45s 0.85s infinite;
+}
+
+#load .shard-wrap:nth-child(19) .shard:before {
+    animation: load 1.45s 0.9s infinite;
+}
+
+#load .shard-wrap:nth-child(20) .shard:before {
+    animation: load 1.45s 0.95s infinite;
+}
+
+#load .shard-wrap:nth-child(21) .shard:before {
+    animation: load 1.45s 1.0s infinite;
+}
+
+#load .shard-wrap:nth-child(22) .shard:before {
+    animation: load 1.45s 1.05s infinite;
+}
+
+#load .shard-wrap:nth-child(23) .shard:before {
+    animation: load 1.45s 1.1s infinite;
+}
+
+#load .shard-wrap:nth-child(24) .shard:before {
+    animation: load 1.45s 1.15s infinite;
+}
+
+#load .shard-wrap:nth-child(25) .shard:before {
+    animation: load 1.45s 1.2s infinite;
+}
+
+#load .shard-wrap:nth-child(26) .shard:before {
+    animation: load 1.45s 1.25s infinite;
+}
+
+#load .shard-wrap:nth-child(27) .shard:before {
+    animation: load 1.45s 1.3s infinite;
+}
+
+#load .shard-wrap:nth-child(28) .shard:before {
+    animation: load 1.45s 1.35s infinite;
+}
+
+#load .shard-wrap:nth-child(29) .shard:before {
+    animation: load 1.45s 1.4s infinite;
+}
+
+#load .shard-wrap:nth-child(30) .shard:before {
+    animation: load 1.45s 1.45s infinite;
+}
+
+@keyframes load {
+    0% {
+        background-color: rgba(0, 0, 0, .7);
+    }
+    100% {
+        background-color: rgba(0, 0, 0, .0);
+    }
+}
+
+.wrap .shard-wrap:nth-child(1) .shard:before {
+    animation: shimmer 5.5s 0s infinite;
+}
+
+.wrap .shard-wrap:nth-child(2) .shard:before {
+    animation: shimmer 5.5s 0.05s infinite;
+}
+
+.wrap .shard-wrap:nth-child(3) .shard:before {
+    animation: shimmer 5.5s 0.10s infinite;
+}
+
+.wrap .shard-wrap:nth-child(4) .shard:before {
+    animation: shimmer 5.5s 0.15s infinite;
+}
+
+.wrap .shard-wrap:nth-child(5) .shard:before {
+    animation: shimmer 5.5s 0.2s infinite;
+}
+
+.wrap .shard-wrap:nth-child(6) .shard:before {
+    animation: shimmer 5.5s 0.25s infinite;
+}
+
+.wrap .shard-wrap:nth-child(7) .shard:before {
+    animation: shimmer 5.5s 0.3s infinite;
+}
+
+.wrap .shard-wrap:nth-child(8) .shard:before {
+    animation: shimmer 5.5s 0.35s infinite;
+}
+
+.wrap .shard-wrap:nth-child(9) .shard:before {
+    animation: shimmer 5.5s 0.40s infinite;
+}
+
+.wrap .shard-wrap:nth-child(10) .shard:before {
+    animation: shimmer 5.5s 0.45s infinite;
+}
+
+.wrap .shard-wrap:nth-child(11) .shard:before {
+    animation: shimmer 5.5s 0.5s infinite;
+}
+
+.wrap .shard-wrap:nth-child(12) .shard:before {
+    animation: shimmer 5.5s 0.55s infinite;
+}
+
+.wrap .shard-wrap:nth-child(13) .shard:before {
+    animation: shimmer 5.5s 0.6s infinite;
+}
+
+.wrap .shard-wrap:nth-child(14) .shard:before {
+    animation: shimmer 5.5s 0.65s infinite;
+}
+
+.wrap .shard-wrap:nth-child(15) .shard:before {
+    animation: shimmer 5.5s 0.70s infinite;
+}
+
+.wrap .shard-wrap:nth-child(16) .shard:before {
+    animation: shimmer 5.5s 0.75s infinite;
+}
+
+.wrap .shard-wrap:nth-child(17) .shard:before {
+    animation: shimmer 5.5s 0.8s infinite;
+}
+
+.wrap .shard-wrap:nth-child(18) .shard:before {
+    animation: shimmer 5.5s 0.85s infinite;
+}
+
+.wrap .shard-wrap:nth-child(19) .shard:before {
+    animation: shimmer 5.5s 0.9s infinite;
+}
+
+.wrap .shard-wrap:nth-child(20) .shard:before {
+    animation: shimmer 5.5s 0.95s infinite;
+}
+
+.wrap .shard-wrap:nth-child(21) .shard:before {
+    animation: shimmer 5.5s 1.0s infinite;
+}
+
+.wrap .shard-wrap:nth-child(22) .shard:before {
+    animation: shimmer 5.5s 1.05s infinite;
+}
+
+.wrap .shard-wrap:nth-child(23) .shard:before {
+    animation: shimmer 5.5s 1.1s infinite;
+}
+
+.wrap .shard-wrap:nth-child(24) .shard:before {
+    animation: shimmer 5.5s 1.15s infinite;
+}
+
+.wrap .shard-wrap:nth-child(25) .shard:before {
+    animation: shimmer 5.5s 1.2s infinite;
+}
+
+.wrap .shard-wrap:nth-child(26) .shard:before {
+    animation: shimmer 5.5s 1.25s infinite;
+}
+
+.wrap .shard-wrap:nth-child(27) .shard:before {
+    animation: shimmer 5.5s 1.3s infinite;
+}
+
+.wrap .shard-wrap:nth-child(28) .shard:before {
+    animation: shimmer 5.5s 1.35s infinite;
+}
+
+.wrap .shard-wrap:nth-child(29) .shard:before {
+    animation: shimmer 5.5s 1.4s infinite;
+}
+
+.wrap .shard-wrap:nth-child(30) .shard:before {
+    animation: shimmer 5.5s 1.45s infinite;
+}
+/*
+//鲸鱼
+.whale {
+	width:  676px;
+	height:  473px;
+	position: absolute;
+	left: 50%;
+	top: 50%;
+	margin-top: -237px;
+	margin-left: -338px;
+	animation: whale6 10s infinite;
+}
+@keyframes whale6{
+	25% {
+		transform: translateX(-30px);
+	}
+	50% {
+		transform: translateX(0);
+	}
+	75% {
+		transform: translateX(30px);
+	}
+	100% {
+		transform: translateX(0);
+	}
+}*/
+
+@keyframes shimmer {
+    40% {
+        background-color: rgba(255, 255, 255, 0);
+    }
+    45% {
+        background-color: rgba(255, 255, 255, 0.2);
+    }
+    100% {
+        background-color: rgba(255, 255, 255, 0);
+    }
+}
+@keyframes penguin3 {
+	40% {
+		-webkit-clip-path: polygon(38.15% 57.857%, 33.65% 84.571%, 52.75% 51%);
+	}
+	50% {
+		-webkit-clip-path: polygon( 38.5% 59.1%,33.7% 89.8%,52.8% 50.6%);
+	}
+	60% {
+		-webkit-clip-path: polygon(38.15% 57.857%, 33.65% 84.571%, 52.75% 51%);
+	}
+}
+@keyframes penguin4 {
+	40% {
+		-webkit-clip-path: polygon(44.65% 39.571%, 36.85% 59.429%, 52.85% 50.857%);
+	}
+	50% {
+		-webkit-clip-path: polygon(44.8% 39%, 37.9% 59.4%, 53.95% 51.3%);
+	}
+	60% {
+		-webkit-clip-path: polygon(44.65% 39.571%, 36.85% 59.429%, 52.85% 50.857%);
+	}
+}
+@keyframes penguin7 {
+	40% {
+		-webkit-clip-path: polygon(40.75% 84.571%, 52.35% 85%, 49.05% 89.857%);
+	}
+	50% {
+		-webkit-clip-path: polygon(41.8% 84.2%,51.1% 84.6%, 53.9% 82.6%);
+	}
+	60% {
+		-webkit-clip-path: polygon(40.75% 84.571%, 52.35% 85%, 49.05% 89.857%);
+	}
+}
+@keyframes penguin8 {
+	10% {
+		-webkit-clip-path: polygon(46.95% 81.714%, 58.95% 81.143%, 55.75% 85.571%);
+	}
+	20% {
+		-webkit-clip-path: polygon(47% 81.5%, 59% 77.2%,56.8% 82.6%);
+	}
+	30% {
+		-webkit-clip-path:  polygon(46.95% 81.714%, 58.95% 81.143%, 55.75% 85.571%);
+	}
+}
+@keyframes penguin27 {
+	10% {
+		-webkit-clip-path: polygon(59.55% 65.714%, 63.05% 53.571%, 65.45% 73.429%);
+	}
+	20% {
+		-webkit-clip-path: polygon(60.3% 62.5%,63% 53.3%, 65.5% 69.1%);
+	}
+	30% {
+		-webkit-clip-path: polygon(59.55% 65.714%, 63.05% 53.571%, 65.45% 73.429%);
+	}
+}
+/*蝴蝶*/
+@keyframes butterfly1{
+	40%{
+		-webkit-clip-path: polygon(19.15% 16.5%, 37.25% 25.643%, 46.55% 47.929%);
+	}
+	45%{
+		-webkit-clip-path: polygon(29.6% 10%, 39.1% 21.9%, 46.55% 47.929%);
+	}
+	50%{
+		-webkit-clip-path: polygon(19.15% 16.5%, 37.25% 25.643%, 46.55% 47.929%);
+	}
+	55%{
+		-webkit-clip-path: polygon(29.6% 10%, 39.1% 21.9%, 46.55% 47.929%);
+	}
+	60%{
+		-webkit-clip-path: polygon(19.15% 16.5%, 37.25% 25.643%, 46.55% 47.929%);
+	}
+}
+@keyframes butterfly2{
+		40%{
+			-webkit-clip-path: polygon(19.15% 16.5%, 26.9% 50.929%, 29.25% 34.3%);
+		}
+		45%{
+			-webkit-clip-path: polygon(29.6% 10%, 30.5% 49.9%, 31.7% 31.2%);
+		}
+		50%{
+			-webkit-clip-path: polygon(19.15% 16.5%, 26.9% 50.929%, 29.25% 34.3%);
+		}
+		55%{
+			-webkit-clip-path: polygon(29.6% 10%, 30.5% 49.9%, 31.7% 31.2%);
+		}
+		60%{
+			-webkit-clip-path: polygon(19.15% 16.5%, 26.9% 50.929%, 29.25% 34.3%);
+		}
+	}
+@keyframes butterfly3{
+		40%{
+			-webkit-clip-path: polygon(19.05% 16.5%, 29% 34.3%, 36.4% 27.5%);
+		}
+		45%{
+			-webkit-clip-path: polygon(29.6% 10%, 31.7% 31.2%, 38% 22.1%);
+		}
+		50%{
+			-webkit-clip-path: polygon(19.05% 16.5%, 29% 34.3%, 36.4% 27.5%);
+		}
+		55%{
+			-webkit-clip-path: polygon(29.6% 10%, 31.7% 31.2%, 38% 22.1%);
+		}
+		60%{
+			-webkit-clip-path: polygon(19.05% 16.5%, 29% 34.3%, 36.4% 27.5%);
+		}
+	}
+@keyframes butterfly4{
+		40%{
+			-webkit-clip-path: polygon(29% 34.214%, 36.3% 27.4%, 46.6% 48.2%);
+		}
+		45%{
+			-webkit-clip-path: polygon(31.7% 31.2%, 38% 22.1%, 46.6% 48.2%);
+		}
+		50%{
+			-webkit-clip-path: polygon(29% 34.214%, 36.3% 27.4%, 46.6% 48.2%);
+		}
+		55%{
+			-webkit-clip-path: polygon(31.7% 31.2%, 38% 22.1%, 46.6% 48.2%);
+		}
+		60%{
+			-webkit-clip-path: polygon(29% 34.214%, 36.3% 27.4%, 46.6% 48.2%);
+		}
+	}
+@keyframes butterfly5{
+		40%{
+			-webkit-clip-path: polygon(28.9% 34.1%, 46.55% 48.214%, 26.85% 50.929%);
+		}
+		45%{
+			-webkit-clip-path: polygon(31.7% 31.2%, 46.6% 48.2%, 30.5% 49.9%);
+		}
+		50%{
+			-webkit-clip-path: polygon(28.9% 34.1%, 46.55% 48.214%, 26.85% 50.929%);
+		}
+		55%{
+			-webkit-clip-path: polygon(31.7% 31.2%, 46.6% 48.2%, 30.5% 49.9%);
+		}
+		60%{
+			-webkit-clip-path: polygon(28.9% 34.1%, 46.55% 48.214%, 26.85% 50.929%);
+		}
+	}
+@keyframes butterfly6{
+		40%{
+			-webkit-clip-path: polygon(26.75% 50.786%, 46.55% 48.071%, 46.05% 52.643%);
+		}
+		45%{
+			-webkit-clip-path: polygon(30.5% 49.9%, 46.55% 48.071%, 46.05% 52.643%);
+		}
+		50%{
+			-webkit-clip-path: polygon(26.75% 50.786%, 46.55% 48.071%, 46.05% 52.643%);
+		}
+		55%{
+			-webkit-clip-path: polygon(30.5% 49.9%, 46.55% 48.071%, 46.05% 52.643%);
+		}
+		60%{
+			-webkit-clip-path: polygon(26.75% 50.786%, 46.55% 48.071%, 46.05% 52.643%);
+		}
+	}
+@keyframes butterfly7{
+		40%{
+			-webkit-clip-path: polygon(31.25% 52.5%, 45.95% 52.786%, 32.65% 64.786%);
+		}
+		45%{
+			-webkit-clip-path: polygon(33.9% 51.9%, 45.95% 52.786%, 33.6% 62%);
+		}
+		50%{
+			-webkit-clip-path: polygon(31.25% 52.5%, 45.95% 52.786%, 32.65% 64.786%);
+		}
+		55%{
+			-webkit-clip-path: polygon(33.9% 51.9%, 45.95% 52.786%, 33.6% 62%);
+		}
+		60%{
+			-webkit-clip-path: polygon(31.25% 52.5%, 45.95% 52.786%, 32.65% 64.786%);
+		}
+	}
+@keyframes butterfly8{
+		40%{
+			-webkit-clip-path: polygon(31.15% 52.5%, 45.95% 52.929%, 38.05% 57.643%);
+		}
+		45%{
+			-webkit-clip-path: polygon(33.9% 51.9%, 45.95% 52.929%, 37.3% 54.7%);
+		}
+		50%{
+			-webkit-clip-path: polygon(31.15% 52.5%, 45.95% 52.929%, 38.05% 57.643%);
+		}
+		55%{
+			-webkit-clip-path: polygon(33.9% 51.9%, 45.95% 52.929%, 37.3% 54.7%);
+		}
+		60%{
+			-webkit-clip-path: polygon(31.15% 52.5%, 45.95% 52.929%, 38.05% 57.643%);
+		}
+	}
+@keyframes butterfly9{
+		40%{
+			-webkit-clip-path: polygon(48.45% 54.214%, 58.95% 69.214%, 51.95% 76.214%);
+		}
+		45%{
+			-webkit-clip-path: polygon(48.45% 54.214%, 56.5% 66.1%, 50.3% 73.6%);
+		}
+		50%{
+			-webkit-clip-path: polygon(48.45% 54.214%, 58.95% 69.214%, 51.95% 76.214%);
+		}
+		55%{
+			-webkit-clip-path: polygon(48.45% 54.214%, 56.5% 66.1%, 50.3% 73.6%);
+		}
+		60%{
+			-webkit-clip-path: polygon(48.45% 54.214%, 58.95% 69.214%, 51.95% 76.214%);
+		}
+	}
+@keyframes butterfly10{
+		40%{
+			-webkit-clip-path: polygon(32.55% 64.643%, 45.85% 52.929%, 38.45% 70.214%);
+		}
+		45%{
+			-webkit-clip-path: polygon(33.6% 62%, 45.85% 52.929%, 38.6% 68.1%);
+		}
+		50%{
+			-webkit-clip-path: polygon(32.55% 64.643%, 45.85% 52.929%, 38.45% 70.214%);
+		}
+		55%{
+			-webkit-clip-path: polygon(33.6% 62%, 45.85% 52.929%, 38.6% 68.1%);
+		}
+		60%{
+			-webkit-clip-path: polygon(32.55% 64.643%, 45.85% 52.929%, 38.45% 70.214%);
+		}
+	}
+@keyframes butterfly11{
+		40%{
+			-webkit-clip-path: polygon(48.35% 54.214%, 58.95% 69.071%, 51.65% 65.786%);
+		}
+		45%{
+			-webkit-clip-path: polygon(48.35% 54.214%, 56.5% 66.1%, 51.8% 62.4%);
+		}
+		50%{
+			-webkit-clip-path: polygon(48.35% 54.214%, 58.95% 69.071%, 51.65% 65.786%);
+		}
+		55%{
+			-webkit-clip-path: polygon(48.35% 54.214%, 56.5% 66.1%, 51.65% 62.4%);
+		}
+		60%{
+			-webkit-clip-path: polygon(48.35% 54.214%, 58.95% 69.071%, 51.65% 65.786%);
+		}
+	}
+@keyframes butterfly12{
+		40%{
+			-webkit-clip-path: polygon(48.45% 54.214%, 51.95% 76.214%, 45.05% 74.214%);
+		}
+		45%{
+			-webkit-clip-path: polygon(48.45% 54.214%, 50.3% 73.6%, 45.1% 72.2%);
+		}
+		50%{
+			-webkit-clip-path: polygon(48.45% 54.214%, 51.95% 76.214%, 45.05% 74.214%);
+		}
+		55%{
+			-webkit-clip-path: polygon(48.45% 54.214%, 50.3% 73.6%, 45.1% 72.2%);
+		}
+		60%{
+			-webkit-clip-path: polygon(48.45% 54.214%, 51.95% 76.214%, 45.05% 74.214%);
+		}
+	}
+@keyframes butterfly13{
+		40%{
+			-webkit-clip-path: polygon(48.35% 54.214%, 50.35% 49.929%, 62.75% 72.786%);
+		}
+		45%{
+			-webkit-clip-path: polygon(48.35% 54.214%, 50.35% 49.929%, 59.5% 68.8%);
+		}
+		50%{
+			-webkit-clip-path: polygon(48.35% 54.214%, 50.35% 49.929%, 62.75% 72.786%);
+		}
+		55%{
+			-webkit-clip-path: polygon(48.35% 54.214%, 50.35% 49.929%, 59.5% 68.8%);
+		}
+		60%{
+			-webkit-clip-path: polygon(48.35% 54.214%, 50.35% 49.929%, 62.75% 72.786%);
+		}
+	}
+@keyframes butterfly14{
+		40%{
+			-webkit-clip-path: polygon(50.45% 50.071%, 67.85% 42.929%, 86.55% 53.929%);
+		}
+		45%{
+			-webkit-clip-path: polygon(50.45% 50.071%, 65.4% 39.6%, 78% 46%);
+		}
+		50%{
+			-webkit-clip-path: polygon(50.45% 50.071%, 67.85% 42.929%, 86.55% 53.929%);
+		}
+		55%{
+			-webkit-clip-path: polygon(50.45% 50.071%, 65.4% 39.6%, 78% 46%);
+		}
+		60%{
+			-webkit-clip-path: polygon(50.45% 50.071%, 67.85% 42.929%, 86.55% 53.929%);
+		}
+	}
+@keyframes butterfly15{
+		40%{
+			-webkit-clip-path: polygon(50.45% 50.071%, 67.75% 45.214%, 69.85% 57.5%);
+		}
+		45%{
+			-webkit-clip-path: polygon(50.45% 50.071%, 65.2% 41%, 66.4% 54.2%);
+		}
+		50%{
+			-webkit-clip-path: polygon(50.45% 50.071%, 67.75% 45.214%, 69.85% 57.5%);
+		}
+		55%{
+			-webkit-clip-path: polygon(50.45% 50.071%, 65.2% 41%, 66.4% 54.2%);
+		}
+		60%{
+			-webkit-clip-path: polygon(50.45% 50.071%, 67.75% 45.214%, 69.85% 57.5%);
+		}
+	}
+@keyframes butterfly16{
+		40%{
+			-webkit-clip-path: polygon(50.35% 50.071%, 69.85% 57.357%, 62.65% 72.786%);
+		}
+		45%{
+			-webkit-clip-path: polygon(50.35% 50.071%, 66.4% 54.2%, 59.5% 68.8%);
+		}
+		50%{
+			-webkit-clip-path: polygon(50.35% 50.071%, 69.85% 57.357%, 62.65% 72.786%);
+		}
+		55%{
+			-webkit-clip-path: polygon(50.35% 50.071%, 66.4% 54.2%, 59.5% 68.8%);
+		}
+		60%{
+			-webkit-clip-path: polygon(50.35% 50.071%, 69.85% 57.357%, 62.65% 72.786%);
+		}
+	}
+@keyframes butterfly17{
+		40%{
+			-webkit-clip-path: polygon(67.65% 45.357%, 86.55% 53.929%, 69.85% 57.5%);
+		}
+		45%{
+			-webkit-clip-path: polygon(65.2% 41%, 78% 46%, 66.4% 54.2%);
+		}
+		50%{
+			-webkit-clip-path: polygon(67.65% 45.357%, 86.55% 53.929%, 69.85% 57.5%);
+		}
+		55%{
+			-webkit-clip-path: polygon(65.2% 41%, 78% 46%, 66.4% 54.2%);
+		}
+		60%{
+			-webkit-clip-path: polygon(67.65% 45.357%, 86.55% 53.929%, 69.85% 57.5%);
+		}
+	}
+@keyframes butterfly18{
+		40%{
+			-webkit-clip-path: polygon(69.75% 57.357%, 86.65% 53.929%, 62.65% 72.786%);
+		}
+		45%{
+			-webkit-clip-path: polygon(66.4% 54.2%, 78% 46%, 59.3% 68.8%);
+		}
+		50%{
+			-webkit-clip-path: polygon(69.75% 57.357%, 86.65% 53.929%, 62.65% 72.786%);
+		}
+		55%{
+			-webkit-clip-path: polygon(66.4% 54.2%, 78% 46%, 59.3% 68.8%);
+		}
+		60%{
+			-webkit-clip-path: polygon(69.75% 57.357%, 86.65% 53.929%, 62.65% 72.786%);
+		}
+	}
+	/*蜻蜓*/
+	@keyframes dragon1{
+		40%{
+			-webkit-clip-path: polygon(38.6% 19%, 69.5% 53.714%, 41.5% 30.857%);
+		}
+		45%{
+			-webkit-clip-path: polygon(37.4% 16.7%, 69.5% 53.714%, 41.7% 25.6%);
+		}
+		50%{
+			-webkit-clip-path: polygon(38.6% 19%, 69.5% 53.714%, 41.5% 30.857%);
+		}
+		55%{
+			-webkit-clip-path: polygon(37.4% 16.7%, 69.5% 53.714%, 41.7% 25.6%);
+		}
+		60%{
+			-webkit-clip-path: polygon(38.6% 19%, 69.5% 53.714%, 41.5% 30.857%);
+		}
+	}
+@keyframes dragon2{
+		40%{
+			-webkit-clip-path: polygon(57.4% 28.714%, 69.5% 53.857%, 62.4% 44.286%);
+		}
+		45%{
+			-webkit-clip-path: polygon(54.8% 25.8%, 69.5% 53.857%, 59.2% 39%);
+		}
+		50%{
+			-webkit-clip-path: polygon(57.4% 28.714%, 69.5% 53.857%, 62.4% 44.286%);
+		}
+		55%{
+			-webkit-clip-path: polygon(54.8% 25.8%, 69.5% 53.857%, 59.2% 39%);
+		}
+		60%{
+			-webkit-clip-path: polygon(57.4% 28.714%, 69.5% 53.857%, 62.4% 44.286%);
+		}
+	}
+@keyframes dragon3{
+		40%{
+			-webkit-clip-path: polygon(44.7% 29%, 51.5% 10%, 62.5% 44.429%);
+		}
+		45%{
+			-webkit-clip-path: polygon(44.5% 26.7%, 50.6% 7%, 59.2% 39%);
+		}
+		50%{
+			-webkit-clip-path: polygon(44.7% 29%, 51.5% 10%, 62.5% 44.429%);
+		}
+		55%{
+			-webkit-clip-path: polygon(44.5% 26.7%, 50.6% 7%, 59.2% 39%);
+		}
+		60%{
+			-webkit-clip-path: polygon(44.7% 29%, 51.5% 10%, 62.5% 44.429%);
+		}
+	}
+@keyframes dragon4{
+		40%{
+			-webkit-clip-path: polygon(44.7% 29%, 40% 9.857%, 51.6% 10.143%);
+		}
+		45%{
+			-webkit-clip-path: polygon(44.5% 26.7%, 38.9% 7.1%, 50.6% 7%);
+		}
+		50%{
+			-webkit-clip-path: polygon(44.7% 29%, 40% 9.857%, 51.6% 10.143%);
+		}
+		55%{
+			-webkit-clip-path: polygon(44.5% 26.7%, 38.9% 7.1%, 50.6% 7%);
+		}
+		60%{
+			-webkit-clip-path: polygon(44.7% 29%, 40% 9.857%, 51.6% 10.143%);
+		}
+	}
+
+@keyframes monkey1 {
+    40% {
+        -webkit-clip-path: polygon(16.45% 78.8%, 17.1% 72.9%, 22.75% 68.1%);
+    }
+    55% {
+        -webkit-clip-path: polygon(19.4% 78.8%, 18% 74.2%, 22.75% 68.1%);
+    }
+    60% {
+        -webkit-clip-path: polygon(16.45% 78.8%, 17.1% 72.9%, 22.75% 68.1%);
+    }
+}
+
+
+@keyframes monkey2 {
+    40% {
+        -webkit-clip-path: polygon(16.95% 73.5%, 20.95% 57.357%, 24.55% 57.786%);
+    }
+    55% {
+        -webkit-clip-path: polygon(17.95% 74.5%, 20.95% 57.357%, 24.55% 57.786%);
+    }
+    60% {
+        -webkit-clip-path: polygon(16.95% 73.5%, 20.95% 57.357%, 24.55% 57.786%);
+    }
+}
+
+@keyframes monkey3 {
+    40% {
+        -webkit-clip-path: polygon(16.95% 73.5%, 24.35% 57.5%, 22.75% 68.214%);
+    }
+    55% {
+        -webkit-clip-path: polygon(17.95% 74.5%, 24.35% 57.5%, 22.75% 68.214%);
+    }
+    60% {
+        -webkit-clip-path: polygon(16.95% 73.5%, 24.35% 57.5%, 22.75% 68.214%);
+    }
+}
+
+
+@keyframes monkey5 {
+    40% {
+        -webkit-clip-path: polygon(16.36% 78.8%, 22.7% 68.1%, 28.2% 72.8%);
+    }
+    55% {
+        -webkit-clip-path: polygon(19.36% 78.8%, 22.7% 68.1%, 28.2% 72.8%);
+    }
+    60% {
+        -webkit-clip-path: polygon(16.36% 78.8%, 22.7% 68.1%, 28.2% 72.8%);
+    }
+}
+
+
+@keyframes monkey6 {
+    40% {
+        -webkit-clip-path: polygon(17.95% 77.8%, 23.95% 74.929%, 19.65% 79.214%);
+    }
+    55% {
+        -webkit-clip-path: polygon(20.2% 77.8%, 25.95% 74%, 21.65% 78.7%);
+    }
+    60% {
+        -webkit-clip-path: polygon(17.95% 77.8%, 23.95% 74.929%, 19.65% 79.214%);
+    }
+}
+
+
+@keyframes monkey8 {
+    0% {
+        -webkit-clip-path: polygon(21.75% 57.214%, 26.45% 49.071%, 24.75% 63.071%);
+    }
+    5% {
+        -webkit-clip-path: polygon(21.75% 58.214%, 25.45% 49.071%, 25.75% 62.071%);
+    }
+    10% {
+        -webkit-clip-path: polygon(21.75% 57.214%, 26.45% 49.071%, 24.75% 63.071%);
+    }
+    15% {
+        -webkit-clip-path: polygon(21.75% 58.214%, 25.45% 49.071%, 25.75% 62.071%);
+    }
+    20% {
+        -webkit-clip-path: polygon(21.75% 57.214%, 26.45% 49.071%, 24.75% 63.071%);
+    }
+}
+@keyframes whale25{
+	50% {
+    	-webkit-clip-path: polygon(78.5% 42.7%,86% 38.5%,95.1% 39.5%);
+	}
+	100% {
+    	-webkit-clip-path: polygon(78.5% 42.7%,86.1% 39.4%,95.5% 40.1%);
+	}
+}
+@keyframes whale26{
+	50% {
+    	-webkit-clip-path: polygon(78.5% 42.7%,88% 44%,95.1% 39.5%);
+	}
+	100% {
+    	-webkit-clip-path: polygon(78.5% 42.7%,88.2% 44.2%,95.5% 40.1%);
+	}
+}
+@keyframes whale28{
+	33% {
+   		-webkit-clip-path: polygon(27.7% 56%,39.4% 58.9%, 42.6% 64%);
+	}
+	66% {
+    	-webkit-clip-path: polygon(27.7% 56%,39.4% 58.9%, 38.5% 65%);
+	}
+	100% {
+    	-webkit-clip-path: polygon(27.7% 56%,39.4% 58.9%,40.5% 64.8%);
+	}
+}
+@keyframes whale29{
+	33% {
+   		-webkit-clip-path: polygon(27.7% 56%,47.2% 69.6%,42.6% 64%);
+	}
+	66% {
+    	-webkit-clip-path: polygon(27.7% 56%,42.2% 73.5%,38.5% 65%);
+	}
+	100% {
+    	-webkit-clip-path: polygon(27.7% 56%,45% 72.4%,40.5% 64.8%);
+	}
+}
+@keyframes whale30{
+	33% {
+   		-webkit-clip-path: polygon(32.7% 60.9%,26.7% 61.3%,38% 66.4%);
+	}
+	66% {
+    	-webkit-clip-path: polygon(32.7% 60.9%,26.7% 61.3%,33% 71.5%);
+	}
+	100% {
+    	-webkit-clip-path: polygon(32.7% 60.9%,26.7% 61.3%,37% 68.4%);
+	}
+}
+ @keyframes haima4{
+    100%{
+          -webkit-clip-path: polygon(73.2% 64.3%,74% 67.5%,75.6% 67.9%);
+
+    }
+}
+ @keyframes haima3{
+    100%{
+          -webkit-clip-path: polygon(24.1% 44.7%,25.7% 49.5%,23.3% 47.6%);
+
+    }
+}
+@keyframes bird1{
+	40% {
+		-webkit-clip-path: polygon(9.7% 43.9%,9.5% 49%,11.1% 52.8%);
+		background-color: #d3eadd;
+	}
+	45% {
+		-webkit-clip-path: polygon(9.6% 43.8%,9.8% 48.9%,12.1% 52.2%);
+		background-color: #d3eadd;
+	}
+	50% {
+		-webkit-clip-path: polygon(9.7% 43.9%,9.5% 49%,11.1% 52.8%);
+		background-color: #d3eadd;
+	}
+	55% {
+		-webkit-clip-path: polygon(9.6% 43.8%,9.8% 48.9%,12.1% 52.2%);
+		background-color: #d3eadd;
+	}
+	60% {
+		-webkit-clip-path: polygon(9.7% 43.9%,9.5% 49%,11.1% 52.8%);
+		background-color: #d3eadd;
+	}
+}
+@keyframes bird6{
+	40% {
+		-webkit-clip-path: polygon(9.7% 43.9%,13% 42.6%,11.1% 52.8%);
+		background-color: #dbdb60;
+	}
+	45% {
+		-webkit-clip-path: polygon(9.7% 43.9%,13% 42.6%,12.1% 52.2%);
+		background-color: #dbdb60;
+	}
+	50% {
+		-webkit-clip-path: polygon(9.7% 43.9%,13% 42.6%,11.1% 52.8%);
+		background-color: #dbdb60;
+	}
+	55% {
+		-webkit-clip-path: polygon(9.7% 43.9%,13% 42.6%,12.1% 52.2%);
+		background-color: #dbdb60;
+	}
+	60% {
+		-webkit-clip-path: polygon(9.7% 43.9%,13% 42.6%,11.1% 52.8%);
+		background-color: #dbdb60;
+	}
+}
+@keyframes bird8{
+	30% {
+		-webkit-clip-path: polygon(10.9% 30.7%,21.6% 30.7%,34% 22.2%);
+		background-color: #79b369;
+	}
+	60% {
+		-webkit-clip-path: polygon(10.9% 30.7%,21.6% 30.7%,34% 22.2%);
+		background-color: #79b369;
+	}
+	90% {
+		-webkit-clip-path: polygon(10.9% 30.7%,21.6% 30.7%,34.4% 15.2%);
+		background-color: #76b166;
+	}
+}
+@keyframes bird9{
+	30% {
+		-webkit-clip-path: polygon(21.6% 30.7%,23.6% 40.6%,39.8% 49.8%);
+		background-color: #496f33;
+	}
+	60% {
+		-webkit-clip-path: polygon(21.6% 30.7%,23.6% 40.6%,39.8% 49.8%);
+		background-color: #496f33;
+	}
+	90% {
+		-webkit-clip-path: polygon(21.6% 30.7%,23.6% 40.6%,33.5% 16.3%);
+		background-color: #6da13a;
+	}
+}
+@keyframes bird10{
+	30% {
+		-webkit-clip-path: polygon(34% 22.2%,59% 0%,57% 8.8%);
+		background-color: #77b05e;
+	}
+	60% {
+		-webkit-clip-path: polygon(34% 22.2%,59% 0%,57% 8.8%);
+		background-color: #77b05e;
+	}
+	90% {
+		-webkit-clip-path: polygon(33.5% 16.3%,31.2% 21.9%,48% 20.3%);
+		background-color: #6aa84e;
+	}
+}
+@keyframes bird11{
+	30% {
+		-webkit-clip-path: polygon(21.7% 30.8%,39.8% 49.8%,46.2% 39.2%);
+		background-color: #4c6241;
+	}
+	60% {
+		-webkit-clip-path: polygon(21.7% 30.8%,39.8% 49.8%,46.2% 39.2%);
+		background-color: #4c6241;
+	}
+	90% {
+		-webkit-clip-path: polygon(23.6% 40.6%,31.2% 21.9%,43.6% 39.1%);
+		background-color: #85aa48;
+	}
+}
+@keyframes bird12{
+	30% {
+		-webkit-clip-path: polygon(57% 8.8%,59% 0%,66.7% 19.6%);
+		background-color: #519f4b;
+	}
+	60% {
+		-webkit-clip-path: polygon(57% 8.8%,59% 0%,66.7% 19.6%);
+		background-color: #519f4b;
+	}
+	90% {
+		-webkit-clip-path: polygon(31.2% 21.9%,45.7% 20.5%,59.8% 28.3%);
+		background-color: #7cb949;
+	}
+}
+@keyframes bird13{
+	30% {
+		-webkit-clip-path: polygon(57% 8.8%,34% 22.2%,46.2% 39.2%);
+		background-color: #384126;
+	}
+	60% {
+		-webkit-clip-path: polygon(57% 8.8%,34% 22.2%,46.2% 39.2%);
+		background-color: #384126;
+	}
+	90% {
+		-webkit-clip-path: polygon(31.2% 21.9%,43.6% 39.1%,58.1% 28%);
+		background-color: #70aa48;
+	}
+}
+@keyframes bird14{
+	30% {
+		-webkit-clip-path: polygon(21.7% 30.8%,34% 22.2%,46.2% 39.2%);
+		background-color: #455132;
+	}
+	60% {
+		-webkit-clip-path: polygon(21.7% 30.8%,34% 22.2%,46.2% 39.2%);
+		background-color: #455132;
+	}
+	90% {
+		-webkit-clip-path: polygon(43.6% 39.1%,23.6% 40.6%,40.2% 49.9%);
+		background-color: #699f43;
+	}
+}
+@keyframes bird18{
+	30% {
+		-webkit-clip-path: polygon(46.2% 39.2%,39.8% 49.8%,61.1% 46.3%);
+		background-color: #445f2f;
+	}
+	60% {
+		-webkit-clip-path: polygon(46.2% 39.2%,39.8% 49.8%,61.1% 46.3%);
+		background-color: #445f2f;
+	}
+	90% {
+		-webkit-clip-path: polygon(43.6% 39.1%,40.2% 49.7%,58.7% 46.7%);
+		background-color: #6aa84e;
+	}
+}
+@keyframes bird21{
+	30% {
+		-webkit-clip-path: polygon(42.5% 65.6%,63.5% 52.5%,63.3% 45.9%);
+		background-color: #406c2b;
+	}
+	60% {
+		-webkit-clip-path: polygon(42.5% 65.6%,63.5% 52.5%,63.3% 45.9%);
+		background-color: #406c2b;
+	}
+	90% {
+		-webkit-clip-path: polygon(42.5% 65.6%,63.5% 52.5%,60.5% 48.6%);
+		background-color: #406c2b;
+	}
+}
+@keyframes bird17{
+	30% {
+		-webkit-clip-path: polygon(46.2% 39.2%,57% 8.8%,66.7% 19.8%);
+		background-color: #404e2e;
+	}
+	60% {
+		-webkit-clip-path: polygon(46.2% 39.2%,57% 8.8%,66.7% 19.8%);
+		background-color: #404e2e;
+	}
+	90% {
+		-webkit-clip-path: polygon(58.1% 28%,58.7% 46.7%,70.5% 41.5%);
+		background-color: #519f4b;
+	}
+}
+@keyframes bird23{
+	30% {
+		-webkit-clip-path: polygon(62% 33.9%,69% 42.2%,63.5% 52.5%);
+		background-color: #458b23;
+	}
+	60% {
+		-webkit-clip-path: polygon(62% 33.9%,69% 42.2%,63.5% 52.5%);
+		background-color: #458b23;
+	}
+	90% {
+		-webkit-clip-path: polygon(58.7% 46.7%,69% 42.2%,63.5% 52.5%);
+		background-color: #458b23;
+	}
+}
+@keyframes bird25{
+	30% {
+		-webkit-clip-path: polygon(46.2% 39.2%,66.7% 19.8%,62.8% 47.1%);
+		background-color: #39512c;
+	}
+	60% {
+		-webkit-clip-path: polygon(46.2% 39.2%,66.7% 19.8%,62.8% 47.1%);
+		background-color: #39512c;
+	}
+	90% {
+		-webkit-clip-path: polygon(43.6% 39.1%,58.1% 28%,58.7% 46.7%);
+		background-color: #57954f;
+	}
+}
+@keyframes bird26{
+	40% {
+		-webkit-clip-path: polygon(71% 49.9%,63.5% 52.5%,88.2% 72.2%);
+		background-color: #2b3108;
+	}
+	45% {
+		-webkit-clip-path: polygon(71% 49.9%,63.5% 52.5%,88% 71.6%);
+		background-color: #2b3108;
+	}
+	50% {
+		-webkit-clip-path: polygon(71% 49.9%,63.5% 52.5%,88.2% 72.2%);
+		background-color: #2b3108;
+	}
+	55% {
+		-webkit-clip-path: polygon(71% 49.9%,63.5% 52.5%,88% 71.6%);
+		background-color: #2b3108;
+	}
+	60% {
+		-webkit-clip-path: polygon(71% 49.9%,63.5% 52.5%,88.2% 72.2%);
+		background-color: #2b3108;
+	}
+}
+@keyframes bird27{
+	40% {
+		-webkit-clip-path: polygon(15.2% 38%,17.9% 38.9%,14.2% 40.4%);
+		background-color: #3a352f;
+	}
+	45% {
+		-webkit-clip-path: polygon(15.2% 38%,17.9% 38.9%,14.2% 40.4%);
+		background-color: #d2c895;
+	}
+	50% {
+		-webkit-clip-path: polygon(15.2% 38%,17.9% 38.9%,14.2% 40.4%);
+		background-color: #3a352f;
+	}
+	55% {
+		-webkit-clip-path: polygon(15.2% 38%,17.9% 38.9%,14.2% 40.4%);
+		background-color: #d2c895;
+	}
+	60% {
+		-webkit-clip-path: polygon(15.2% 38%,17.9% 38.9%,14.2% 40.4%);
+		background-color: #3a352f;
+	}
+}
+/*金狮绒*/
+
+@keyframes lion30 {
+	0%{
+          -webkit-clip-path: polygon(64.45% 79.357%, 75.85% 82.643%, 64.55% 84.643%);
+    }
+    80%{
+          -webkit-clip-path: polygon(64.45% 79.357%, 75.85% 82.643%, 64.55% 84.643%);
+    }
+    90%{
+          -webkit-clip-path: polygon(64.45% 80.357%, 75.85% 78.643%, 64.55% 84.643%);
+    }
+    100%{
+          -webkit-clip-path: polygon(64.45% 79.357%, 75.85% 82.643%, 64.55% 84.643%);
+    }
+}
+
+/*乌龟*/
+@keyframes wugui2 {
+		0%{
+              -webkit-clip-path: polygon(26.35% 55.857%, 32.45% 58.714%, 22.95% 70.571%);
+        }
+        80%{
+              -webkit-clip-path: polygon(26.35% 55.857%, 32.45% 58.714%, 22.95% 70.571%);
+        }
+		90%{
+              -webkit-clip-path: polygon(26.35% 55.857%, 32.45% 58.714%, 20.95% 68.571%);
+        }
+        100%{
+              -webkit-clip-path: polygon(26.35% 55.857%, 32.45% 58.714%, 22.95% 70.571%);
+        }	     
+    }
+    
+    @keyframes wugui3 {
+    	0%{
+              -webkit-clip-path: polygon(22.65% 61%, 26.45% 56.286%, 22.95% 70.571%);
+        }
+        80%{
+        	-webkit-clip-path: polygon(22.65% 61%, 26.45% 56.286%, 22.95% 70.571%);
+        }
+        90%{
+              -webkit-clip-path: polygon(22.65% 61%, 26.45% 56.286%, 20.95% 68.571%);
+        }
+        100%{
+              -webkit-clip-path: polygon(22.65% 61%, 26.45% 56.286%, 22.95% 70.571%);
+        }
+    }
+   
+    
+    
+    @keyframes wugui4 {
+    	0%{
+              -webkit-clip-path: polygon(10.65% 58.714%, 20.05% 52.143%, 30.85% 51.857%);
+        }
+        80%{
+              -webkit-clip-path: polygon(10.65% 58.714%, 20.05% 52.143%, 30.85% 51.857%);
+        }
+        90%{
+              -webkit-clip-path: polygon(10.65% 56.714%, 20.05% 52.143%, 30.85% 51.857%);
+        }
+        100%{
+              -webkit-clip-path: polygon(10.65% 58.714%, 20.05% 52.143%, 30.85% 51.857%);
+        }
+    }
+   
+    @keyframes wugui5 {
+        0%{
+              -webkit-clip-path: polygon(10.55% 58.571%, 30.85% 51.857%, 25.45% 59.143%);
+        }
+        80%{
+              -webkit-clip-path: polygon(10.55% 58.571%, 30.85% 51.857%, 25.45% 59.143%);
+        }
+        90%{
+              -webkit-clip-path: polygon(10.55% 56.571%, 30.85% 51.857%, 25.45% 59.143%);
+        }
+        100%{
+              -webkit-clip-path: polygon(10.55% 58.571%, 30.85% 51.857%, 25.45% 59.143%);
+        }
+    }
+    @keyframes wugui22 {
+        0%{
+              -webkit-clip-path: polygon(55.05% 51.571%, 58.25% 41.429%, 67.05% 41.714%);
+        }
+        60%{
+              -webkit-clip-path: polygon(55.05% 51.571%, 59.25% 41.429%, 68.05% 42.014%);
+        }
+        90%{
+              -webkit-clip-path: polygon(55.05% 51.571%, 61.25% 41.429%, 70.05% 42.714%);
+        }
+        100%{
+              -webkit-clip-path: polygon(55.05% 51.571%, 58.25% 41.429%, 67.05% 41.714%);
+        }
+    }
+    @keyframes wugui23 {
+        0%{
+              -webkit-clip-path: polygon(58.25% 41.571%, 65.85% 21.714%, 67.05% 41.714%);
+        }
+        60%{
+              -webkit-clip-path: polygon(59.25% 41.429%, 66.45% 21.714%, 68.05% 42.014%);
+        }
+        90%{
+              -webkit-clip-path: polygon(61.25% 41.429%, 68.3% 21.714%, 70.05% 42.714%);
+        }
+        100%{
+              -webkit-clip-path: polygon(58.25% 41.571%, 65.85% 21.714%, 67.05% 41.714%);
+        }
+    }
+    @keyframes wugui24 {
+        0%{
+              -webkit-clip-path: polygon(58.25% 41.571%, 60.45% 19.429%, 65.85% 21.714%);
+        }
+        60%{
+              -webkit-clip-path: polygon(59.25% 41.429%, 61% 19.429%, 66.45% 21.714%);
+        }
+        90%{
+              -webkit-clip-path: polygon(61.25% 41.429%, 62.5% 19.429%, 68.3% 21.714%);
+        }
+        100%{
+              -webkit-clip-path: polygon(58.25% 41.571%, 60.45% 19.429%, 65.85% 21.714%);
+        }
+    }
+    @keyframes wugui25 {
+        0%{
+              -webkit-clip-path: polygon(60.45% 19.429%, 60.45% 10%, 65.85% 21.714%);
+        }
+        60%{
+              -webkit-clip-path: polygon(61% 19.429%, 61.95% 10%, 66.45% 21.714%);
+        }
+        90%{
+              -webkit-clip-path: polygon(62.5% 19.429%, 62.95% 10%, 68.3% 21.714%);
+        }
+        100%{
+              -webkit-clip-path: polygon(60.45% 19.429%, 59.95% 10%, 65.85% 21.714%);
+        }
+    }
+/*过度动画 ： 所有的css样式，执行时间，延时时间，运动形式（贝塞尔曲线）*/
+.wrap .shard-wrap:nth-child(1) .shard {
+	 transition: all 1.24s 0.5s cubic-bezier(0.62, 0.02, 0.34, 1), background-color 0.4s 0.5s;
+}
+.wrap .shard-wrap:nth-child(2) .shard {
+	 transition: all 1.28s 0.45s cubic-bezier(0.62, 0.02, 0.34, 1), background-color 0.4s 0.45s;
+}
+.wrap .shard-wrap:nth-child(3) .shard {
+	transition: all 1.32s 0.4s cubic-bezier(0.62, 0.02, 0.34, 1), background-color 0.4s 0.4s;
+}
+.wrap .shard-wrap:nth-child(4) .shard {
+	 transition: all 1.36s 0.35s cubic-bezier(0.62, 0.02, 0.34, 1), background-color 0.4s 0.35s;
+}
+.wrap .shard-wrap:nth-child(5) .shard {
+	transition: all 1.4s 0.3s cubic-bezier(0.62, 0.02, 0.34, 1), background-color 0.4s 0.3s;
+}
+.wrap .shard-wrap:nth-child(6) .shard {
+	transition: all 1.44s 0.25s cubic-bezier(0.62, 0.02, 0.34, 1), background-color 0.4s 0.25s;
+}
+.wrap .shard-wrap:nth-child(7) .shard {
+	transition: all 1.48s 0.2s cubic-bezier(0.62, 0.02, 0.34, 1), background-color 0.4s 0.2s;
+}
+.wrap .shard-wrap:nth-child(8) .shard {
+	transition: all 1.52s 0.15s cubic-bezier(0.62, 0.02, 0.34, 1), background-color 0.4s 0.15s;
+}
+.wrap .shard-wrap:nth-child(9) .shard {
+	transition: all 1.56s 0.1s cubic-bezier(0.62, 0.02, 0.34, 1), background-color 0.4s 0.1s;
+}
+.wrap .shard-wrap:nth-child(10) .shard {
+	transition: all 1.6s 0.05s cubic-bezier(0.62, 0.02, 0.34, 1), background-color 0.4s 0.05s;
+}
+.wrap .shard-wrap:nth-child(11) .shard {
+	 transition: all 1.64s 0s cubic-bezier(0.62, 0.02, 0.34, 1), background-color 0.4s 0s;
+}
+.wrap .shard-wrap:nth-child(12) .shard {
+	transition: all 1.68s -0.05s cubic-bezier(0.62, 0.02, 0.34, 1), background-color 0.4s -0.05s;
+}
+.wrap .shard-wrap:nth-child(13) .shard {
+	transition: all 1.72s -0.1s cubic-bezier(0.62, 0.02, 0.34, 1), background-color 0.4s -0.1s;
+}
+.wrap .shard-wrap:nth-child(14) .shard {
+	transition: all 1.76s -0.15s cubic-bezier(0.62, 0.02, 0.34, 1), background-color 0.4s -0.15s;
+}
+.wrap .shard-wrap:nth-child(15) .shard {
+	transition: all 1.8s -0.2s cubic-bezier(0.62, 0.02, 0.34, 1), background-color 0.4s -0.2s;
+}
+.wrap .shard-wrap:nth-child(16) .shard {
+	transition: all 1.84s -0.2s cubic-bezier(0.62, 0.02, 0.34, 1), background-color 0.4s -0.2s;
+}
+.wrap .shard-wrap:nth-child(17) .shard {
+	transition: all 1.88s -0.15s cubic-bezier(0.62, 0.02, 0.34, 1), background-color 0.4s -0.15s;
+}
+.wrap .shard-wrap:nth-child(18) .shard {
+	 transition: all 1.92s -0.1s cubic-bezier(0.62, 0.02, 0.34, 1), background-color 0.4s -0.1s;
+}
+.wrap .shard-wrap:nth-child(19) .shard {
+	transition: all 1.96s -0.05s cubic-bezier(0.62, 0.02, 0.34, 1), background-color 0.4s -0.05s;
+}
+.wrap .shard-wrap:nth-child(20) .shard {
+	transition: all 2s 0s cubic-bezier(0.62, 0.02, 0.34, 1), background-color 0.4s 0s;
+}
+.wrap .shard-wrap:nth-child(21) .shard {
+	 transition: all 2.04s 0.05s cubic-bezier(0.62, 0.02, 0.34, 1), background-color 0.4s 0.05s;
+}
+.wrap .shard-wrap:nth-child(22) .shard {
+	transition: all 2.08s 0.1s cubic-bezier(0.62, 0.02, 0.34, 1), background-color 0.4s 0.1s;
+}
+.wrap .shard-wrap:nth-child(23) .shard {
+	transition: all 2.12s 0.15s cubic-bezier(0.62, 0.02, 0.34, 1), background-color 0.4s 0.15s;
+}
+.wrap .shard-wrap:nth-child(24) .shard {
+	transition: all 2.16s 0.2s cubic-bezier(0.62, 0.02, 0.34, 1), background-color 0.4s 0.2s;
+}
+.wrap .shard-wrap:nth-child(25) .shard {
+	transition: all 2.2s 0.25s cubic-bezier(0.62, 0.02, 0.34, 1), background-color 0.4s 0.25s;
+}
+.wrap .shard-wrap:nth-child(26) .shard {
+	transition: all 2.24s 0.3s cubic-bezier(0.62, 0.02, 0.34, 1), background-color 0.4s 0.3s;
+}
+.wrap .shard-wrap:nth-child(27) .shard {
+	 transition: all 2.28s 0.35s cubic-bezier(0.62, 0.02, 0.34, 1), background-color 0.4s 0.35s;
+}
+.wrap .shard-wrap:nth-child(28) .shard {
+	transition: all 2.32s 0.4s cubic-bezier(0.62, 0.02, 0.34, 1), background-color 0.4s 0.4s;
+}
+.wrap .shard-wrap:nth-child(29) .shard {
+	transition: all 2.36s 0.45s cubic-bezier(0.62, 0.02, 0.34, 1), background-color 0.4s 0.45s;
+}
+.wrap .shard-wrap:nth-child(30) .shard {
+	transition: all 2.4s 0.5s cubic-bezier(0.62, 0.02, 0.34, 1), background-color 0.4s 0.5s;
+}
+.wrap .shard-wrap:nth-child(31) .shard {
+	transition: all 2.44s 0.2s cubic-bezier(0.62, 0.02, 0.34, 1), background-color 0.4s 0.2s;
+}
+.wrap .shard-wrap:nth-child(32) .shard {
+	transition: all 2.48s 0.25s cubic-bezier(0.62, 0.02, 0.34, 1), background-color 0.4s 0.25s;
+}
+.wrap .shard-wrap:nth-child(33) .shard {
+	transition: all 2.52s 0.3s cubic-bezier(0.62, 0.02, 0.34, 1), background-color 0.4s 0.3s;
+}
+.wrap .shard-wrap:nth-child(34) .shard {
+	transition: all 2.56s 0.35s cubic-bezier(0.62, 0.02, 0.34, 1), background-color 0.4s 0.35s;
+}
+@keyframes move{
+	0% {
+		transform: rotateZ(0deg);
+	}
+	100% {
+		transform: rotateZ(360deg);
+	}
+}
+#circle {
+	position: absolute;
+	top: 50px;
+	left: 50%;
+	width: 520px;
+	height: 520px;
+	margin-left: -260px;
+	z-index: 999;
+}
+.desc {
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	left: 50%;
+	top: 50%;
+	margin-left: -50%;
+	margin-top: -50%;
+	text-align: center;
+	display: table;
+	/*z-index: 1000;*/
+}
+.text {
+	display: table-cell;
+	vertical-align: middle;
+}
+.desc p:nth-of-type(1) {
+	font: 20px/8px Arial;
+	color: red;
+}
+.desc p:nth-of-type(2) {
+	font: bold 40px/10px Arial;
+	color: #fff;
+}
+.desc p:nth-of-type(3) {
+	font: bold 40px/10px Arial;
+	color: #fff;
+}
+.desc p:nth-of-type(4) {
+	font: 14px/10px Arial;
+	color: #fff;
+}
+.desc p:nth-of-type(5) {
+	width: 220px;
+	font: 12px/16px Arial;
+	color: #fff;
+	margin: 0 auto;
+}
+#svg {
+	animation: 60s move infinite;
+	position: relative;
+	z-index: 10000;
+}
+/*改处之一*/
+@keyframes niao1{
+    0%{
+       -webkit-clip-path: polygon(32.8% 58%, 38.4% 61.2%, 12.2% 81.5%);
+    }
+    80%{
+        -webkit-clip-path: polygon(32.8% 58%, 38.4% 61.2%, 12.2% 81.5%);
+    }
+    90%{
+        -webkit-clip-path: polygon(32.8% 58%, 38.4% 61.2%, 12.2% 76.5%);
+    }
+    100%{
+        -webkit-clip-path: polygon(32.8% 58%, 38.4% 61.2%, 12.2% 81.5%);
+    }
+
+}
+@keyframes niao2{
+    0%{
+       -webkit-clip-path: polygon(21.9% 67.8%, 33.5% 57.9%, 26% 60.7%);
+    }
+    80%{
+        -webkit-clip-path: polygon(21.9% 67.8%, 33.5% 57.9%, 26% 60.7%);
+    }
+    90%{
+        -webkit-clip-path: polygon(19.9% 67.8%, 33.5% 57.9%, 26% 60.7%);
+    }
+    100%{
+        -webkit-clip-path: polygon(21.9% 67.8%, 33.5% 57.9%, 26% 60.7%);
+    }
+
+
+}
+@keyframes niao3{
+    0%{
+        -webkit-clip-path: polygon(22.7% 62.9%, 39.2% 42.8%, 50.8% 49.8%);
+    }
+    80%{
+        -webkit-clip-path: polygon(22.7% 62.9%, 39.2% 42.8%, 50.8% 49.8%);
+    }
+    90%{
+        -webkit-clip-path: polygon(21.7% 62.9%, 39.2% 42.8%, 50.8% 49.8%);
+    }
+    100%{
+        -webkit-clip-path: polygon(22.7% 62.9%, 39.2% 42.8%, 50.8% 49.8%);
+    }
+
+}
+@keyframes shulan27{
+    0%{
+        -webkit-clip-path:polygon(73.35% 69.3%, 81.75% 60.286%, 80.35% 68.143%);
+    }
+    80%{
+        -webkit-clip-path:polygon(73.35% 69.3%, 81.75% 60.286%, 80.35% 68.143%);
+    }
+    90%{
+        -webkit-clip-path:polygon(73.35% 69.3%, 81.75% 66.286%, 80.35% 68.143%);
+    }
+     100%{
+        -webkit-clip-path:polygon(73.35% 69.3%, 81.75% 60.286%, 80.35% 68.143%);
+    }
+}
+
