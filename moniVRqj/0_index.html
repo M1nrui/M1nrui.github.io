@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,user-scalable=no" />
+<title>Document</title>
+<style type="text/css">
+body {
+	margin: 0;
+}	
+body,
+html {
+	height: 100%;
+	overflow: hidden;
+	position: relative;
+}
+#bg {
+	height: 100%;
+	background: url(bg/bg.jpg) no-repeat;
+	backgrund-size: 100% 100%;
+}
+#view {
+	left: 0;
+	top: 0;
+	width: 100%;
+	height: 100%;
+	overflow: hidden;
+	position: absolute;
+	-webkit-perspective: 300px;
+	perspective: 300px;
+}
+#main,
+#z,
+#box {
+	position: absolute;
+	left: 50%;
+	top: 50%;
+	-webkit-transform-style: preserve-3d;
+	transform-style: preserve-3d;
+}
+#box span {
+	position: absolute;
+	left: 50%;
+	top: 50%;
+	margin: -585px 0 0 -64.5px;
+	width: 129px;
+	height: 1170px;
+	-webkit-backface-visibility: hidden;
+	backface-visibility: hidden;
+}
+</style>
+<script type="text/javascript" src="js/data.js"></script>
+<script type="text/javascript" src="js/m.Tween.js"></script>
+<script type="text/javascript">
+document.addEventListener('touchmove', function(e) {
+	e.preventDefault();
+});
+window.onload = function(){
+	setView();
+	var z = document.querySelector('#z');
+	css(z, 'translateZ', -150);
+	createBg();
+	setRotate();
+};
+function setView(){
+	set();
+	//横竖屏切换
+	window.addEventListener("orientation" in window?"orientationchange":"resize", set);
+	function set(){
+		var view = document.querySelector('#view');
+		var height = view.clientHeight;
+		var main = document.querySelector('#main');
+		var deg = 52.5;
+		var R = Math.round(Math.tan(deg/180*Math.PI)*height/2);
+		view.style.WebkitPerspective = view.style.perspective = R + "px";	
+		css(main,"translateZ",R);
+	}
+	 
+}
+function createBg(){
+	//通过data.js里的数据把20张图排成一个圆形
+	var box = document.querySelector('#box');
+	var deg = 360/imgData["bg"].length;
+	var R = Math.round(Math.tan((180 - deg)/2*Math.PI/180) * 64.5) - 1;
+	var startDeg = 180;
+	css(box, 'rotateX', 0);
+	css(box, 'rotateY', 25);
+	for(var i = 0; i < imgData["bg"].length; i++){
+		var span = document.createElement("span");
+		css(span,"rotateY", startDeg);
+		css(span,"translateZ", -R);
+		span.style.backgroundImage = "url("+imgData["bg"][i]+")";
+		box.appendChild(span);
+		startDeg -= deg;
+	}
+	// MTween({
+	// 	el: box,
+	// 	target: {rotateY:720},
+	// 	type: "linear",
+	// 	time: 10000
+	// });
+}
+function setRotate() {
+	var box = document.querySelector('#box');
+	var z = document.querySelector('#z');
+	var startDeg = {x:0,y:0};//{x:css(box,"rotateX"),y:css(box,"rotateY")};
+	var startDevice = {x:0,y:0};
+	window.isStart = true;
+	var lastTime = Date.now();
+	var startZ = css(z,"translateZ");
+	var scale = 129/18;
+	var dir = window.orientation;
+	window.addEventListener('orientationchange', function(e) {
+		dir = window.orientation;
+		window.isStart = false;
+		MTween({
+			el:box,
+			target: {rotateX:0},
+			time: 500,
+			type: "easeOut"
+		});
+	});
+	//手机的重力感应系统
+	window.addEventListener('deviceorientation', function(e) {
+		var nowTime = Date.now();
+		if(nowTime - lastTime < 30){
+			return;
+		}
+		lastTime = nowTime;
+		var beta = Math.round(e.beta); //x
+		var gamma = Math.round(e.gamma); //y
+		var alpha = Math.round(e.alpha); //z
+		var nowDevice = {x:0,y:0}
+		//四种横竖屏情况，分别对应xy应该怎么转
+		switch(dir){
+			case 0:
+				var x = beta;
+				var y = gamma;
+				break;
+			case 90:
+				var x = -gamma;
+				var y = beta;
+				break;
+			case -90:
+				var x = -gamma;
+				var y = -beta;
+				break;
+			case 180:
+				var x = -beta;
+				var y = -gamma;
+				break;			
+		}
+		
+		if(isStart){
+			isStart = false;
+			startDevice.x = x;
+			startDevice.y = y;
+			startDeg.x = css(box,"rotateX");
+			startDeg.y = css(box,"rotateY");
+		} else {
+			nowDevice.x = x;
+			nowDevice.y = y;
+			var disDevice = {};
+			disDevice.x = nowDevice.x - startDevice.x;
+			disDevice.y = nowDevice.y - startDevice.y;
+			var deg = {};
+			deg.x = startDeg.x + disDevice.x;
+			deg.y = startDeg.y + disDevice.y;
+			//css(z,"translateZ",startZ - Math.round(Math.abs(disDevice.y)*scale));
+			/*css(box,"rotateX",deg.x);
+			css(box,"rotateY",deg.y);*/
+			//css();
+			if(deg.x > 40){
+				deg.x = 40;
+			} else if(deg.x < -40) {
+				deg.x = -40;
+			}
+			var disZ = Math.round(Math.abs(deg.y - css(box,"rotateY"))*scale);
+			MTween({
+				el:box,
+				target: {rotateX:deg.x,rotateY:deg.y},
+				time: 500,
+				type: "easeOut"
+			});
+			MTween({
+				el:z,
+				target: {translateZ: (startZ - disZ)},
+				time: 200,
+				type: "easeOut",
+				callBack: function(){
+					MTween({
+						el:z,
+						target: {translateZ:startZ},
+						time: 400,
+						type: "easeOut"
+					});
+				}
+			});
+		}
+
+	});
+}
+</script>
+</head>
+<body>
+<div id="bg"></div>
+<div id="view">
+	<div id="main">
+		<div id="z">
+			<div id="box"></div>
+		</div>
+	</div>
+</div>
+</body>
+</html>
