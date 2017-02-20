@@ -1,0 +1,147 @@
+﻿<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title></title>
+<link href="style/weibo.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div class="znsArea">
+<!--留言-->
+     <div class="takeComment">
+        <textarea name="textarea" class="takeTextField" id="tijiaoText"></textarea>
+        <div class="takeSbmComment">
+            <input type="button" id="btn1" class="inputs" value="" />
+            <span>(可按 Enter 回复)</span>
+        </div>
+    </div>
+<!--已留-->
+    <div class="commentOn">
+        <div class="messList" id="div1" style="height:502px">
+        	<!--<div class="reply">
+                <p class="replyContent">卫士，新款卫士将推出总共14种车身式样。其中， XS旅行款车型售价为32295英镑(约33.6万元)。</p>
+                <p class="operation">
+                    <span class="replyTime">2018-09-08 16:37:60</span>
+                    <span class="handle">
+                    	<a href="javascript:;" class="top">0</a>
+                        <a href="javascript:;" class="down_icon">0</a>
+                        <a href="javascript:;" class="cut">删除</a>
+                    </span>
+                </p>
+            </div>-->
+        </div>
+        <div class="page" id="page">
+        	<a href="javascript:;" class="active">1</a>
+        	<a href="javascript:;">2</a>
+        	<a href="javascript:;">3</a>
+        </div>
+    </div>
+</div>
+</body>
+<script src="myAjax_x2.js" type="text/javascript" charset="utf-8"></script>
+<script type="text/javascript">
+	function CreateDate(){
+		this.box = document.getElementById('div1'); //要插入的元素
+		this.txt = document.getElementById('tijiaoText');//输入的内容
+	};
+	CreateDate.prototype = {
+		//指定构造函数
+		constructor:CreateDate,
+		init:function(obj){
+			var _this = this;
+			obj.onclick = function(){
+				_this.event();   //穿数据，调用数据
+			};
+			this.loaded(1);  //不点击的时候，默认是显示第一页
+		},
+		event:function(){
+			var _this = this;
+			var val = _this.txt.value.trim();
+			if(val){
+				ajax({
+					url:'weibo.php',
+					data:{
+						act:'add',
+						content:val
+					},
+					succ:function(json){
+						if(!json.error){
+							//没有错误时，从新渲染数据，并且清空输入栏
+							_this.loaded(1);
+							_this.txt.value = ''; 
+						}	
+					}
+				});
+			}else{
+				alert('你快勒马？'); 
+			}
+		},
+		//创建节点，并填写内容，要记得最后要把需要的东西return出来
+		cDiv:function(val,time){//把输入的数据传到留言板上
+			var div = document.createElement('div');   //创建一个节点，然后使用模板字符串
+			div.className = 'reply';
+			div.innerHTML = `<p class="replyContent">${val}</p>
+                <p class="operation">
+                    <span class="replyTime">${time}</span>
+                    <span class="handle">
+                    	<a href="javascript:;" class="top">0</a>
+                        <a href="javascript:;" class="down_icon">0</a>
+                        <a href="javascript:;" class="cut">删除</a>
+                    </span>
+                </p>`;
+			return div;
+		},
+		cDate:function(time){   //显示当前的时间
+			//只要服务器时间为1970，直接*1000
+			var str = '';
+			var t = new Date(time*1000);
+			var y = t.getFullYear();
+			var mon = t.getMonth()+1;
+			var day = t.getDate();
+			var H = t.getHours();
+			var min = t.getMinutes();
+			var sen = t.getSeconds();
+			//console.log(t)
+			
+			//2018-09-08 16:37:60
+			
+			str = y+'-'+this.toDou(mon)+'-'+this.toDou(day)+' '+this.toDou(H)+':'+this.toDou(min)+':'+this.toDou(sen);
+			
+			return str;
+		},
+		toDou:function(n){   //针对时间的判断，在个位数上加零
+			return n<10?'0'+n:''+n;
+		},
+		loaded:function(n){
+			//找第几页数据
+			//weibo.php?act=get&page=2
+			var _this = this;
+			ajax({
+				url:'weibo.php',
+				data:{
+					act:'get',
+					page:n
+				},
+				succ:function(arr){
+					//alert(1);
+					_this.box.innerHTML = '';   //每次都清空留言板，从新渲染
+					arr.foreach(function(e,i){
+						var div = _this.cDiv(e.content,_this.cDate(e.time)); //通过返回值可以找到每一个的val和time，再通过函数加工他们
+						_this.box.appendChild(div);	
+					});
+				}
+			});
+		}
+	}
+	
+	
+	var c1 = new CreateDate();
+	var btn1 = document.getElementById('btn1');
+	c1.init(btn1);
+	c1.txt.onkeydown = function(ev){   //键盘事件
+		if(ev.keyCode === 13 && ev.ctrlKey){
+			c1.Event();
+		}
+	};
+</script>
+</html>
