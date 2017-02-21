@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<div id='box'></div>
+		<script src="js/react.js" type="text/javascript" charset="utf-8"></script>
+		<script src="js/react-dom.js" type="text/javascript" charset="utf-8"></script>
+		<script src="js/browser.min.js" type="text/javascript" charset="utf-8"></script>
+		<script type="text/babel">
+			/*var H2 = React.createElement('h2',{},'react!');
+			console.log(H2)
+			ReactDOM.render(
+				H2,
+				document.getElementById('box'),
+				function(){
+					alert(1111);
+				}
+			);*/
+			
+			var H1 = React.createClass({
+				render:function(){
+					return (
+						<div>
+							<div>
+								蛇皮老祖!
+							</div>
+							<p>pdd</p>
+						</div>
+					)
+				}
+			});
+			ReactDOM.render(
+				<H1 />,
+				document.getElementById('box')
+			);
+		</script>
+	</body>
+</html>

@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<link rel="stylesheet" type="text/css" href="css/base.css">
+    	<link rel="stylesheet" type="text/css" href="css/index.css">
+	</head>
+	<body>
+		<section class="todoapp" id="box"> </section>
+		<section class="todoapp" id="box2"> </section>
+		<script src="js/react.js" type="text/javascript" charset="utf-8"></script>
+		<script src="js/react-dom.js" type="text/javascript" charset="utf-8"></script>
+		<script src="js/browser.min.js" type="text/javascript" charset="utf-8"></script>
+		<script type="text/babel">
+			//React就是通过检测getInitialState的状态，如果初始化的数据被修改了，那么会自动渲染DOM
+			var Transformer = React.createClass({
+				//初始化数据
+				getInitialState:function(){
+					return {
+						val:'',
+						data:this.props.data,
+						num:0
+					}
+				},
+				//初始化状态
+				render:function(){
+					return (
+						<div>
+							<Header that={this}/>
+							<List val={this.state.val} data={this.state.data} that={this}/>
+						</div>
+					)
+				}
+			});
+			var Header = React.createClass({
+				getInitialState:function(){
+					return {
+						v:''
+					}
+				},
+				/*要修改状态中的数据：
+					this.setState({
+						初始化的数据:被修改的新数据
+					})*/
+				change:function(ev){
+					this.setState({
+						v:ev.target.value
+					})
+				},
+				down:function(ev){
+					var that = this.props.that;
+					var data = that.state.data;
+					var num = 0;
+					//倒叙，没生成一个数据，放到最上面，然后id为最大的一个数
+					if(ev.keyCode === 13){
+						if(that.state.data.length){
+							num = that.state.data[0].id
+						}
+						num++;
+						//储存数据，方便添加
+						data.unshift({
+							id:num,
+							title:ev.target.value,
+							isChecked:false
+						})
+						that.setState({
+							data:data
+						})
+						this.setState({
+							v:''
+						})
+					};
+				},
+				render:function(){
+					return (
+						<header className="header" >
+			                <h1>todos</h1>
+			                <input className="new-todo" placeholder="请输入内容" value={this.state.v} onChange={this.change} onKeyDown={this.down}/>
+			            </header>
+					)
+				}
+			});
+			//列表
+			var List = React.createClass({
+				render:function(){
+					return (
+						<section className="main">
+			                <ul className="todo-list">
+			                  {
+			                  	this.props.data.map(function(e,i){
+				   
+				                  	return <Li data={e} key={i} that={this.props.that}/>
+				                  }.bind(this))
+			                  }
+			                </ul>
+			            </section>	
+					)
+				}
+			});
+			//每一个Li的组件
+			var Li = React.createClass({
+				click:function(){
+					var that = this.props.that;
+					for(var i=0;i<that.state.data.length;i++){
+						if(that.state.data[i].id === this.props.data.id){
+							that.state.data[i].isChecked = !that.state.data[i].isChecked
+						}
+					}
+					
+					if(this.props.data.isChecked){
+						that.state.num++;
+					}else{
+						that.state.num--;
+					}
+					
+					//console.log(that.state.num)
+					
+					
+					that.setState({
+						data:that.state.data,
+						num:that.state.num
+					})
+				},
+				remove:function(){
+					var that = this.props.that;
+					var num = that.state.num;
+					for(var i=0;i<that.state.data.length;i++){
+						if(that.state.data[i].id === this.props.data.id){
+							that.state.data.splice(i,1);
+						}
+					}
+					
+					if(this.props.data.isChecked){
+						num--;
+					}
+					that.setState({
+						data:that.state.data,
+						num:num
+					})
+				},
+				render:function(){
+					var len = this.props.that.state.data.length;
+					var data = this.props.data;
+					
+					var c = data.isChecked?true:false;
+					
+					return (
+						<li className={data.isChecked?'completed':''}>
+	                        <div className="view">
+	                            <input className="toggle" type="checkbox" onClick={this.click} checked={c} onChange={this.change}/>
+	                            <label>{data.title}</label>
+	                            <button className="destroy" onClick={this.remove} ></button>
+	                        </div>
+	                    </li>
+					)
+				}
+			});
+			
+			var data = [
+				{
+					id:1,
+					title:"蛇皮老祖pdd",
+					isChecked:false  //给这条数据加上一个字段，来表示这条数据是否被选中
+				},
+				{
+					id:0,
+					title:"欢迎回来",
+					isChecked:false
+				}
+			]
+	
+			ReactDOM.render(
+				<Transformer data={data}/>,
+				document.getElementById('box')
+			);
+		</script>
+	</body>
+</html>
